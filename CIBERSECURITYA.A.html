@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría de Ciberseguridad - Protección Digital Avanzada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: #ffffff;
+        }
+        p {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        a {
+            color: #f90;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #ffb533;
+        }
+
+        /* Header */
+        header {
+            background-color: #0a0a0a;
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        header .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        header nav {
+            float: right;
+        }
+        header nav a {
+            margin-left: 20px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        header nav a:hover {
+            background-color: #f90;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+    background-image: url('foto2.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .hero h1 {
+            font-size: 4.5em;
+            z-index: 1;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.8em;
+            z-index: 1;
+            margin-top: 20px;
+        }
+        .hero .btn-cta {
+            background-color: #f90;
+            padding: 15px 35px;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.3em;
+            z-index: 1;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+        .hero .btn-cta:hover {
+            background-color: #ffb533;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .services h2 {
+            margin-bottom: 50px;
+        }
+        .services-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .service-box {
+            background-color: #fff;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 15px;
+            width: 30%;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .service-box i {
+            font-size: 3.5em;
+            color: #f90;
+            margin-bottom: 20px;
+        }
+        .service-box h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .service-box p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        /* About Us Section */
+        .about-us {
+            background-color: #111;
+            color: white;
+            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .about-us-text {
+            width: 50%;
+        }
+        .about-us img {
+            width: 40%;
+            border-radius: 15px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Creadores Section */
+        .creadores {
+            background-color: #222;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .creadores p {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f5f5f5;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .testimonials h2 {
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            color: #333;
+        }
+        .testimonial-carousel {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .testimonial-box {
+            background-color: white;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+        .testimonial-box p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .testimonial-box h4 {
+            font-size: 1.1em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .contact h2 {
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            color: #333;
+        }
+        .contact p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .contact-form {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 45%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1.1em;
+        }
+        .contact-form textarea {
+            width: 100%;
+            height: 150px;
+        }
+        .contact-form button {
+            background-color: #f90;
+            padding: 15px 35px;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.3em;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #ffb533;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        footer a {
+            color: #f90;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">CIBERSECURITY A.A.</div>
+        <nav>
+            <a href="#services">Servicios</a>
+            <a href="#about">Nosotros</a>
+            <a href="#testimonials">Testimonios</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Protege lo que más importa</h1>
+        <p>Consultoría avanzada en ciberseguridad para empresas que valoran su seguridad digital.</p>
+        <a href="#contact" class="btn-cta">Contáctanos</a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <i class="fas fa-bug"></i>
+                <h3>Pruebas de Penetración</h3>
+                <p>Identificamos vulnerabilidades antes de que puedan ser explotadas por actores maliciosos.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Gestión de Riesgos</h3>
+                <p>Evaluamos y mitigamos riesgos potenciales para fortalecer tu infraestructura.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-laptop-code"></i>
+                <h3>DevSecOps</h3>
+                <p>Integración de seguridad desde el diseño hasta el despliegue, asegurando un ciclo de vida seguro.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us" id="about">
+        <div class="about-us-text">
+            <h2>Acerca de Nosotros</h2>
+            <p>Somos un equipo especializado en ciberseguridad con años de experiencia en diversos sectores, incluyendo financiero, salud y tecnología. Ayudamos a empresas a cumplir con normativas clave y a implementar estrategias de seguridad robustas.</p>
+        </div>
+        <img src="foto1.jpg" alt="Equipo trabajando">
+    </section>
+
+    <!-- Creadores Section -->
+    <section class="creadores">
+        <h2>Creadores de la empresa</h2>
+        <p>Esta empresa fue fundada por Adrián Águeda , Steffen Torres , Claudia Garcia y Arturo Rybak, unos expertos en ciberseguridad con amplia trayectoria en consultoría para grandes corporaciones, en colaboración con un equipo de especialistas en seguridad digital y tecnologías emergentes.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2>Testimonios</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial-box">
+                <p>"Gracias a CIBERSECURITY A.A. logramos identificar vulnerabilidades críticas en nuestro sistema antes de que fuera demasiado tarde."</p>
+                <h4>- María López, CEO de FinTech Solutions</h4>
+            </div>
+            <div class="testimonial-box">
+                <p>"Su enfoque proactivo en la gestión de riesgos nos ha brindado una mayor tranquilidad en cuanto a la seguridad de nuestros datos."</p>
+                <h4>- Juan Pérez, CTO de HealthSecure Inc.</h4>
+            </div>
+            <div class="testimonial-box">
+                <p>"La implementación de DevSecOps en nuestros procesos ha optimizado tanto la seguridad como la eficiencia de nuestro equipo de desarrollo."</p>
+                <h4>- Laura García, Directora de Tecnología en TecInnovate</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contacto</h2>
+        <p>Ponte en contacto con nosotros para más información sobre nuestros servicios de ciberseguridad.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <textarea placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 CIBERSECURITY A.A. Todos los derechos reservados.</p>
+        <p><a href="#services">Nuestros Servicios</a> | <a href="#about">Acerca de Nosotros</a> | <a href="#testimonials">Testimonios</a> | <a href="#contact">Contacto</a></p>
+    </footer>
+</body>
+</html>
